@@ -7,21 +7,21 @@
 ;; home
 
 (defn home-panel []
-  (let [name (re-frame/subscribe [::subs/name])
-        products (re-frame/subscribe [::subs/products])]
+  (let [products (re-frame/subscribe [::subs/products])]
     [:div
-     [:h1 (str "Welcome " @name)]
-
-     [:div
-      [:a {:href "#/about"}
-       "go to About Page"]]
-     [:ul
-      (for [p (seq @products)]
-        [:li
-         [:div
-          [:img {:src (:image p)}]
-          (:description p)]
-         ])]
+     [:h1 "Mallorca's Galacart Gallery"]
+     [:div {:class "menu-and-products-container"}
+      [:ul
+       [:li [:a {:href "#/"} "Home"]]
+       [:li [:a {:href "#/about"} "About"]]
+       ]
+      [:div {:class "product-list-container"}
+       (for [product (seq @products)]
+         [:div {:class "product-container"}
+          [:img {:src (:image product)}]
+          [:p {:dangerouslySetInnerHTML {:__html (:description product)}}]]
+         )]
+      ]
      ]
     ))
 

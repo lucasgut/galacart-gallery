@@ -1,0 +1,63 @@
+/* Container for sticky menu and products */
+.menu-and-products-container > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  font-size: 28px;
+}
+
+.menu-and-products-container > ul > li {
+  float: left;
+}
+
+.menu-and-products-container > ul > li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu-and-products-container > ul > li a:hover {
+  background-color: #111;
+}
+
+/* Product list container */
+.product-list-container {
+  background-image: url("../img/background.jpg");
+}
+
+/* Product container */
+.product-container {
+  display: flex;
+  background: rgba(241, 241, 241, .5);
+}
+
+.product-container:hover {
+  background: rgba(241, 241, 241, .1);
+}
+
+.product-container > img {
+  background: rgba(241, 241, 241, 0.0);
+  margin: 10px;
+  padding: 20px;
+}
+
+.product-container > p {
+  background: rgba(241, 241, 241, 0.0);
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.product-container > p:hover {
+  background: rgba(230, 230, 230, 0.9);
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
