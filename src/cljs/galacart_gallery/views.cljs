@@ -4,46 +4,47 @@
     [galacart-gallery.subs :as subs]
     ))
 
+
 ;; home
 
 (defn home-panel []
   (let [products (re-frame/subscribe [::subs/products])]
-    [:div
-     [:h1 "Mallorca's Galacart Gallery"]
-     [:div {:class "menu-and-products-container"}
-      [:ul
-       [:li [:a {:href "#/"} "Home"]]
-       [:li [:a {:href "#/about"} "About"]]
-       ]
-      [:div {:class "product-list-container"}
-       (for [product (seq @products)]
-         [:div {:class "product-container"}
-          [:img {:src (:image product)}]
-          [:p {:dangerouslySetInnerHTML {:__html (:description product)}}]]
-         )]
-      ]
-     ]
+    [:div {:class "product-list-container"}
+     (for [product (seq @products)]
+       ^{:key product}       ;; metadata to avoid warning with iterator requiring a key
+       [:div {:class "product-container"}
+        [:img {:src (:image product)}]
+        [:p {:dangerouslySetInnerHTML {:__html (:description product)}}]]
+       )]
     ))
 
 
-;; about
+;; Contact
 
-(defn about-panel []
+(defn contact-panel []
   [:div
-   [:h1 "This is the About Page."]
-
-   [:div
-    [:a {:href "#/"}
-     "go to Home Page"]]])
+   [:img {:src "img/smiley.jpg"}]
+   [:p "Concha aka Galacart, la autora de Pinturas Mallorca"]
+   ])
 
 
 ;; main
 
 (defn- panels [panel-name]
-  (case panel-name
-    :home-panel [home-panel]
-    :about-panel [about-panel]
-    [:div]))
+  [:div
+   [:h1 {:class "header-banner"} "Mallorca Paintings - Galacart Gallery"]
+   [:div {:class "menu-and-products-container"}
+    [:ul
+     [:li [:a {:href "#/"} "Home"]]
+     [:li [:a {:href "#/contact"} "Contact"]]
+     ]
+    (case panel-name
+      :home-panel [home-panel]
+      :contact-panel [contact-panel]
+      [:div])
+    ]
+   ])
+
 
 (defn show-panel [panel-name]
   [panels panel-name])

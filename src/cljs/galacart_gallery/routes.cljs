@@ -25,8 +25,8 @@
     (re-frame/dispatch [::events/set-active-panel :home-panel])
     )
 
-  (defroute "/about" []
-    (re-frame/dispatch [::events/set-active-panel :about-panel]))
+  (defroute "/contact" []
+    (re-frame/dispatch [::events/set-active-panel :contact-panel]))
 
 
   ;; --------------------
