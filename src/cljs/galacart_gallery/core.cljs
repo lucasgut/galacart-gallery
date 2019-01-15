@@ -1,12 +1,12 @@
 (ns galacart-gallery.core
   (:require
-   [reagent.core :as reagent]
-   [re-frame.core :as re-frame]
-   [galacart-gallery.events :as events]
-   [galacart-gallery.routes :as routes]
-   [galacart-gallery.views :as views]
-   [galacart-gallery.config :as config]
-   ))
+    [reagent.core :as reagent]
+    [re-frame.core :as re-frame]
+    [galacart-gallery.events :as events]
+    [galacart-gallery.routes :as routes]
+    [galacart-gallery.views :as views]
+    [galacart-gallery.config :as config]
+    ))
 
 
 (defn dev-setup []

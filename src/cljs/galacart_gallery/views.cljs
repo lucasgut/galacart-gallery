@@ -2,22 +2,39 @@
   (:require
     [re-frame.core :as re-frame]
     [galacart-gallery.subs :as subs]
+    [galacart-gallery.events :as events]
     ))
 
 
-;; home
+;; Product image modal, hidden by default
+
+(defn product-image-modal []
+  (let [product-image-modal (re-frame/subscribe [::subs/product-image-modal])]
+    [:div {:class "product-image-modal"
+           :style {:display (if (:visible @product-image-modal) "block" "none")}}
+     [:div
+      [:span {:dangerouslySetInnerHTML {:__html "&times;"}
+              :on-click #(re-frame/dispatch [::events/toggle-product-image-modal {:visible false}])}]     ;; cross symbol to close window
+      [:img {:src (:image-path @product-image-modal)}]
+      ]]))
+
+
+;; Home
 
 (defn home-panel []
   (let [products (re-frame/subscribe [::subs/products])]
     [:div {:class "product-list-container"}
+     [product-image-modal]   ;; Render product image modal, hidden by default
      (for [product (seq @products)]
        ^{:key product}       ;; metadata to avoid warning with iterator requiring a key
        [:div {:class "product-container"}
-        [:img {:src (:image product)}]
+        [:img {:src (:image product)
+               :on-click #(re-frame/dispatch [::events/toggle-product-image-modal {:visible true
+                                                                                   :image-path (:image product)}])
+               }]
         [:p {:dangerouslySetInnerHTML {:__html (:description product)}}]]
        )]
     ))
-
 
 ;; Contact
 
@@ -28,7 +45,7 @@
    ])
 
 
-;; main
+;; Main
 
 (defn- panels [panel-name]
   [:div
