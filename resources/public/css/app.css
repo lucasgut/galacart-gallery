@@ -1,8 +1,13 @@
 /* Header banner*/
 .header-banner {
-  margin: 50;
-  color: #aaafff;
-  font-size: 48px;
+  margin: 0px;
+  padding: 30px;
+  color: #44cc88;
+  background-color: #eeeeee;
+  font-size: 60px;
+  font-family: "Georgia";
+  font-style: italic;
+  background: linear-gradient(to bottom right, #eee, #aaa);
 }
 
 /* Container for sticky menu and products */
@@ -11,11 +16,11 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
   font-size: 28px;
+  background: linear-gradient(to top, #333, #888);
 }
 
 .menu-and-products-container > ul > li {
@@ -31,7 +36,7 @@
 }
 
 .menu-and-products-container > ul > li a:hover {
-  background-color: #111;
+  background: linear-gradient(to top, #555, #aaa);
 }
 
 /* Product list container */
@@ -51,15 +56,16 @@
 
 .product-container > img {
   background: rgba(241, 241, 241, 0.0);
-  margin: 10px;
-  padding: 20px;
-  max-width: 50%;
+  margin: 0px;
+  padding: 10px;
+  max-width: 25%;
+  width: 100%;
+  height: 100%;
   object-fit: scale-down;
-  object-position: 0 0;
 }
 
 .product-container > img:hover {
-  border: 5px solid #33cc77;
+  background: rgba(230, 230, 230, 0.9);
 }
 
 .product-container > p {
