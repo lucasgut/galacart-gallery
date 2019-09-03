@@ -4,9 +4,14 @@
   )
 
 (re-frame/reg-sub
-  ::products
+  ::paintings
   (fn [db]
-    (:products db)))
+    (:paintings db)))
+
+(re-frame/reg-sub
+  ::sculptures
+  (fn [db]
+    (:sculptures db)))
 
 (re-frame/reg-sub
   ::active-panel

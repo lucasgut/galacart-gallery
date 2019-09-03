@@ -22,24 +22,48 @@
 ;; Home
 
 (defn home-panel []
-  (let [products (re-frame/subscribe [::subs/products])]
-    [:div {:class "product-list-container"}
+  [:div {:class "home-container"}
+   [:p "Welcome!"]
+   ])
+
+;; Paintings
+
+(defn paintings-panel []
+  (let [paintings (re-frame/subscribe [::subs/paintings])]
+    [:div {:class "painting-list-container"}
      [product-image-modal]   ;; Render product image modal, hidden by default
-     (for [product (seq @products)]
-       ^{:key product}       ;; metadata to avoid warning with iterator requiring a key
-       [:div {:class "product-container"}
-        [:img {:src (:image product)
+     (for [painting (seq @paintings)]
+       ^{:key painting}       ;; metadata to avoid warning with iterator requiring a key
+       [:div {:class "painting-container"}
+        [:img {:src (:image painting)
                :on-click #(re-frame/dispatch [::events/toggle-product-image-modal {:visible true
-                                                                                   :image-path (:image product)}])
+                                                                                   :image-path (:image painting)}])
                }]
-        [:p {:dangerouslySetInnerHTML {:__html (:description product)}}]]
+        [:p {:dangerouslySetInnerHTML {:__html (:description painting)}}]]
+       )]
+    ))
+
+;; Sculptures
+
+(defn sculptures-panel []
+  (let [sculptures (re-frame/subscribe [::subs/sculptures])]
+    [:div {:class "sculpture-list-container"}
+     [product-image-modal]   ;; Render product image modal, hidden by default
+     (for [sculpture (seq @sculptures)]
+       ^{:key sculpture}       ;; metadata to avoid warning with iterator requiring a key
+       [:div {:class "sculpture-container"}
+        [:img {:src (:image sculpture)
+               :on-click #(re-frame/dispatch [::events/toggle-product-image-modal {:visible true
+                                                                                   :image-path (:image sculpture)}])
+               }]
+        [:p {:dangerouslySetInnerHTML {:__html (:description sculpture)}}]]
        )]
     ))
 
 ;; Contact
 
 (defn contact-panel []
-  [:div
+  [:div {:class "contact-container"}
    [:img {:src "img/smiley.jpg"}]
    [:p "Concha aka Galacart, la autora de Pinturas Mallorca"]
    ])
@@ -49,14 +73,18 @@
 
 (defn- panels [panel-name]
   [:div
-   [:h1 {:class "header-banner"} "Mallorca Paintings - Galacart Gallery"]
+   [:h1 {:class "header-banner"} "Mallorca Paintings & Sculptures - Galacart Gallery"]
    [:div {:class "menu-and-products-container"}
     [:ul
      [:li [:a {:href "#/"} "Home"]]
+     [:li [:a {:href "#/paintings"} "Paintings"]]
+     [:li [:a {:href "#/sculptures"} "Sculptures"]]
      [:li [:a {:href "#/contact"} "Contact"]]
      ]
     (case panel-name
       :home-panel [home-panel]
+      :paintings-panel [paintings-panel]
+      :sculptures-panel [sculptures-panel]
       :contact-panel [contact-panel]
       [:div])
     ]

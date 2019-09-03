@@ -22,8 +22,13 @@
   ;; --------------------
   ;; define routes here
   (defroute "/" []
-    (re-frame/dispatch [::events/set-active-panel :home-panel])
-    )
+    (re-frame/dispatch [::events/set-active-panel :home-panel]))
+
+  (defroute "/paintings" []
+    (re-frame/dispatch [::events/set-active-panel :paintings-panel]))
+
+  (defroute "/sculptures" []
+    (re-frame/dispatch [::events/set-active-panel :sculptures-panel]))
 
   (defroute "/contact" []
     (re-frame/dispatch [::events/set-active-panel :contact-panel]))

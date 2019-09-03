@@ -39,22 +39,24 @@
   background: linear-gradient(to top, #555, #aaa);
 }
 
-/* Product list container */
-.product-list-container {
+/* Home container */
+.home-container {
+  height: 100vh;
   background-image: url("../img/background.jpg");
 }
 
-/* Product container */
-.product-container {
+/* Paintings container */
+.painting-list-container {
+  background-image: url("../img/background.jpg");
+}
+.painting-container {
   display: flex;
   background: rgba(241, 241, 241, .5);
 }
-
-.product-container:hover {
+.painting-container:hover {
   background: rgba(241, 241, 241, .1);
 }
-
-.product-container > img {
+.painting-container > img {
   background: rgba(241, 241, 241, 0.0);
   margin: 0px;
   padding: 10px;
@@ -62,24 +64,65 @@
   width: 100%;
   height: 100%;
   object-fit: scale-down;
+  image-orientation: from-image;
 }
-
-.product-container > img:hover {
+.painting-container > img:hover {
   background: rgba(230, 230, 230, 0.9);
 }
-
-.product-container > p {
+.painting-container > p {
   background: rgba(241, 241, 241, 0.0);
   margin: 10px;
   padding: 20px;
   font-size: 30px;
 }
-
-.product-container > p:hover {
+.painting-container > p:hover {
   background: rgba(230, 230, 230, 0.9);
   margin: 10px;
   padding: 20px;
   font-size: 30px;
+}
+
+/* Sculptures container */
+.sculpture-list-container {
+  background-image: url("../img/background.jpg");
+}
+.sculpture-container {
+  display: flex;
+  background: rgba(241, 241, 241, .5);
+}
+.sculpture-container:hover {
+  background: rgba(241, 241, 241, .1);
+}
+.sculpture-container > img {
+  background: rgba(241, 241, 241, 0.0);
+  margin: 0px;
+  padding: 10px;
+  max-width: 25%;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  image-orientation: from-image;
+}
+.sculpture-container > img:hover {
+  background: rgba(230, 230, 230, 0.9);
+}
+.sculpture-container > p {
+  background: rgba(241, 241, 241, 0.0);
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+.sculpture-container > p:hover {
+  background: rgba(230, 230, 230, 0.9);
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+/* Contact container */
+.contact-container {
+  height: 100vh;
+  background-image: url("../img/background.jpg");
 }
 
 /* Product image modal, hidden by default */
