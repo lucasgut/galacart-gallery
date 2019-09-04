@@ -18,3 +18,8 @@
   ::toggle-product-image-modal
   (fn [db [_ product-image-modal]]
     (assoc db :product-image-modal product-image-modal)))
+
+(re-frame/reg-event-db
+  ::change-home-image
+  (fn [db [_]]
+    (assoc db :active-home-image-index (rand-int (count (:paintings db))))))

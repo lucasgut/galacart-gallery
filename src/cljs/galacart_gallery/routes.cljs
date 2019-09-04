@@ -30,8 +30,8 @@
   (defroute "/sculptures" []
     (re-frame/dispatch [::events/set-active-panel :sculptures-panel]))
 
-  (defroute "/contact" []
-    (re-frame/dispatch [::events/set-active-panel :contact-panel]))
+  (defroute "/about" []
+    (re-frame/dispatch [::events/set-active-panel :about-panel]))
 
 
   ;; --------------------

@@ -22,9 +22,10 @@
 ;; Home
 
 (defn home-panel []
-  [:div {:class "home-container"}
-   [:p "Welcome!"]
-   ])
+  (let [home-image (re-frame/subscribe [::subs/home-image])]
+    [:div
+     [:img {:class "home-image" :src @home-image}]
+     ]))
 
 ;; Paintings
 
@@ -60,12 +61,18 @@
        )]
     ))
 
-;; Contact
+;; About
 
-(defn contact-panel []
-  [:div {:class "contact-container"}
-   [:img {:src "img/smiley.jpg"}]
-   [:p "Concha aka Galacart, la autora de Pinturas Mallorca"]
+(defn about-panel []
+  [:div {:class "about-container"}
+   [:div {:style {:float "left"}}
+     [:img {:src "img/ConchaGalan.jpg"}]]
+   [:div {:style {:float "center"}}
+     [:h1 "Welcome to my online gallery!"]
+     [:p "Hi! I'm a part-time artist and this site contains all my works available for sale from my studio in Santa Ponsa, Mallorca."]
+     [:p "If you are interested in any of the works or just have a question please don't hesitate to get in touch. I hope you enjoy the tour!"]
+     [:h2 "Contact: info@galacart-gallery.eu"]
+    ]
    ])
 
 
@@ -73,19 +80,20 @@
 
 (defn- panels [panel-name]
   [:div
-   [:h1 {:class "header-banner"} "Mallorca Paintings & Sculptures - Galacart Gallery"]
+   [:div {:class "header-banner"}
+    [:h1 {:class "header-banner-text"} [:a {:href "#/" :class "header-banner-text"} "Galacart Gallery"]]
+    [:p {:class "header-banner-subtext"} "Mallorca Paintings & Sculptures"]]
    [:div {:class "menu-and-products-container"}
     [:ul
-     [:li [:a {:href "#/"} "Home"]]
      [:li [:a {:href "#/paintings"} "Paintings"]]
      [:li [:a {:href "#/sculptures"} "Sculptures"]]
-     [:li [:a {:href "#/contact"} "Contact"]]
+     [:li [:a {:href "#/about"} "About"]]
      ]
     (case panel-name
       :home-panel [home-panel]
       :paintings-panel [paintings-panel]
       :sculptures-panel [sculptures-panel]
-      :contact-panel [contact-panel]
+      :about-panel [about-panel]
       [:div])
     ]
    ])
@@ -94,6 +102,11 @@
 (defn show-panel [panel-name]
   [panels panel-name])
 
+;; Timer function called every 5 seconds to change the home page image
+(defn dispatch-timer-event []
+    (re-frame/dispatch [::events/change-home-image]))
+
 (defn main-panel []
+  (defonce do-timer (js/setInterval dispatch-timer-event 5000))
   (let [active-panel (re-frame/subscribe [::subs/active-panel])]
     [show-panel @active-panel]))

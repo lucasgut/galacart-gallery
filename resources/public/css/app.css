@@ -1,13 +1,24 @@
 /* Header banner*/
 .header-banner {
   margin: 0px;
-  padding: 30px;
-  color: #44cc88;
+  padding: 15px;
   background-color: #eeeeee;
-  font-size: 60px;
+  background: linear-gradient(to bottom right, #fef, #984);
+}
+.header-banner-text {
+  margin: 0px;
+  color: #22aaaa;
+  font-size: 40px;
   font-family: "Georgia";
   font-style: italic;
-  background: linear-gradient(to bottom right, #eee, #aaa);
+  text-decoration: none;
+}
+.header-banner-subtext {
+  margin: 0px;
+  margin-left: 40px;
+  color: #22aa88;
+  font-size: 40px;
+  font-family: "Georgia";
 }
 
 /* Container for sticky menu and products */
@@ -20,6 +31,8 @@
   position: sticky;
   top: 0;
   font-size: 28px;
+  font-family: "Georgia";
+  font-style: italic;
   background: linear-gradient(to top, #333, #888);
 }
 
@@ -31,7 +44,7 @@
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 5px 16px;
   text-decoration: none;
 }
 
@@ -40,14 +53,16 @@
 }
 
 /* Home container */
-.home-container {
-  height: 100vh;
-  background-image: url("../img/background.jpg");
+.home-image {
+  width: 97vw;
+  height: 97vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 /* Paintings container */
 .painting-list-container {
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/P9_Acrilico_Lienzo.jpg");
 }
 .painting-container {
   display: flex;
@@ -84,7 +99,7 @@
 
 /* Sculptures container */
 .sculpture-list-container {
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/P9_Acrilico_Lienzo.jpg");
 }
 .sculpture-container {
   display: flex;
@@ -119,10 +134,13 @@
   font-size: 30px;
 }
 
-/* Contact container */
-.contact-container {
-  height: 100vh;
-  background-image: url("../img/background.jpg");
+/* About container */
+.about-container {
+  width: 97vw;
+  height: 97vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url("../img/P9_Acrilico_Lienzo.jpg");
 }
 
 /* Product image modal, hidden by default */

@@ -4,6 +4,11 @@
   )
 
 (re-frame/reg-sub
+  ::home-image
+  (fn [db]
+    (:image (nth (:paintings db) (:active-home-image-index db)))))
+
+(re-frame/reg-sub
   ::paintings
   (fn [db]
     (:paintings db)))
