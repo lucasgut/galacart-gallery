@@ -46,4 +46,5 @@
                 { :image "img/10E_Terracot_pigmentos.jpg"
                   :description "<b></b><br/><br/>Terracota con pigmentos<br/>23x35cm" }
                 )
+    :active-home-image-index 0
    })
