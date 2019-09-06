@@ -82,7 +82,7 @@
   [:div
    [:div {:class "header-banner"}
     [:h1 {:class "header-banner-text"} [:a {:href "#/" :class "header-banner-text"} "Galacart Gallery"]]
-    [:p {:class "header-banner-subtext"} "Mallorca Paintings & Sculptures"]]
+    [:p {:class "header-banner-subtext"} "Mallorca, Santa Ponsa"]]
    [:div {:class "menu-and-products-container"}
     [:ul
      [:li [:a {:href "#/paintings"} "Paintings"]]

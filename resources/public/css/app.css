@@ -2,8 +2,7 @@
 .header-banner {
   margin: 0px;
   padding: 15px;
-  background-color: #eeeeee;
-  background: linear-gradient(to bottom right, #fef, #984);
+  background-image: url("../img/header.jpg");
 }
 .header-banner-text {
   margin: 0px;
