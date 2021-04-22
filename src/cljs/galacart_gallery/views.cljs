@@ -28,9 +28,9 @@
         [:img {:class "home-image" :src @home-image}]
         ]  
       [:div {:style {:float "right" :max-width "40vw"}}
-        [:h1 {:style {:color "gold"}} "Welcome! Bienvenidos!"]
-        [:p {:style {:color "khaki" :font-size "1.5rem"}}"I'm a part-time artist and this site contains my works available for sale from my studio in Santa Ponsa, Mallorca, Spain."]
-        [:p {:style {:color "khaki" :font-size "1.5rem"}}"Soy un artista a tiempo parcial y esta pagina contiene mis obras en venta desde mi estudio en Santa Ponsa, Mallorca."]
+        [:h1 "Welcome! Bienvenidos!"]
+        [:p {:class "home-text"} "I'm a part-time artist and this site contains my works available for sale from my studio in Santa Ponsa, Mallorca, Spain."]
+        [:p {:class "home-text"} "Soy un artista a tiempo parcial y esta pagina contiene mis obras en venta desde mi estudio en Santa Ponsa, Mallorca."]
         ]  
     ]
   ))
@@ -72,9 +72,17 @@
 ;; About
 
 (defn about-panel []
-  [:div {:class "about-container"}
+  [:div {:class "about-container; about-text"}
    [:div {:style {:float "center"}}
+     [:p
+        "El arte siempre ha estado presente en mi vida, ha sido mi guía durante los muchos años vividos en diferentes países en los que no he dejado nunca de observar y aprender."[:br]
+        "Mi residencia ahora es la isla de Mallorca donde continúo haciendo lo que me gusta, crear, expresar a través de la escultura o la pintura."[:br]
+        "El arte sirve de tránsito entre el sentimiento que nace del artista y el que recibe el espectador; y eso es lo que intento transmitir desde mi taller de Santa Ponsa."]
      [:img {:class "about-image" :src "img/about.jpg"}]
+     [:p
+        "Arts are my lifelong passion that have guided me to observe and learn whilst living in different countries around the world."[:br]
+        "I live on the island of Mallorca now where I continue to create and express art through sculptures and paintings."[:br]
+        "Art acts as a medium to convey the artists emotions to those who receive it which is what I aim to do from my workshop in Santa Ponsa."]
     ]
    ])
 

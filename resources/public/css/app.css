@@ -54,10 +54,9 @@
 
 /* Home container */
 .home-container {
-  /* background-image: url("../img/background.jpg"); */
-  /* background-color: #c4d2d3; */
-  background-color: #bec3c7;
+  background-color:rgba(241, 241, 241);
   background-repeat: round;
+  color: rgba(235, 152, 29);
   overflow: hidden;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
@@ -69,14 +68,18 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+.home-text {
+  color: rgb(19, 11, 87);
+  font-size: 1.5rem;
+}
 
 /* Paintings container */
 .painting-list-container {
-  background-image: url("../img/P9_Acrilico_Lienzo.jpg");
+  background: rgba(241, 241, 241, 1.0);
+  margin-left: 20vw;
 }
 .painting-container {
   display: flex;
-  background: rgba(241, 241, 241, .5);
 }
 .painting-container:hover {
   background: rgba(241, 241, 241, .1);
@@ -85,14 +88,14 @@
   background: rgba(241, 241, 241, 0.0);
   margin: 0px;
   padding: 10px;
-  max-width: 25%;
+  max-width: 40%;
   width: 100%;
   height: 100%;
   object-fit: scale-down;
   image-orientation: from-image;
 }
 .painting-container > img:hover {
-  background: rgba(230, 230, 230, 0.9);
+  background: rgba(235, 152, 29, 0.9);
 }
 .painting-container > p {
   background: rgba(241, 241, 241, 0.0);
@@ -109,11 +112,11 @@
 
 /* Sculptures container */
 .sculpture-list-container {
-  background-image: url("../img/P9_Acrilico_Lienzo.jpg");
+  background: rgba(241, 241, 241, 1.0);
+  margin-left: 20vw;
 }
 .sculpture-container {
   display: flex;
-  background: rgba(241, 241, 241, .5);
 }
 .sculpture-container:hover {
   background: rgba(241, 241, 241, .1);
@@ -122,14 +125,14 @@
   background: rgba(241, 241, 241, 0.0);
   margin: 0px;
   padding: 10px;
-  max-width: 25%;
+  max-width: 35%;
   width: 100%;
   height: 100%;
   object-fit: scale-down;
   image-orientation: from-image;
 }
 .sculpture-container > img:hover {
-  background: rgba(230, 230, 230, 0.9);
+  background: rgba(235, 152, 29, 0.9);
 }
 .sculpture-container > p {
   background: rgba(241, 241, 241, 0.0);
@@ -146,8 +149,7 @@
 
 /* About container */
 .about-container {
-  background-image: url("../img/background.jpg");
-  background-repeat: round;
+  background-color: rgba(241, 241, 241);
 }
 .about-image {
   max-width: 50vw;
@@ -156,6 +158,14 @@
   height: auto;
   margin: auto;
   display: block;
+}
+.about-text {
+  color: rgb(19, 11, 87);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw  
 }
 
 /* Product image modal, hidden by default */
