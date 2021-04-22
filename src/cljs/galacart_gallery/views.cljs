@@ -23,9 +23,17 @@
 
 (defn home-panel []
   (let [home-image (re-frame/subscribe [::subs/home-image])]
-    [:div
-     [:img {:class "home-image" :src @home-image}]
-     ]))
+    [:div {:class "home-container"}
+      [:div {:style {:float "left"}}
+        [:img {:class "home-image" :src @home-image}]
+        ]  
+      [:div {:style {:float "right" :max-width "40vw"}}
+        [:h1 {:style {:color "gold"}} "Welcome! Bienvenidos!"]
+        [:p {:style {:color "khaki" :font-size "1.5rem"}}"I'm a part-time artist and this site contains my works available for sale from my studio in Santa Ponsa, Mallorca, Spain."]
+        [:p {:style {:color "khaki" :font-size "1.5rem"}}"Soy un artista a tiempo parcial y esta pagina contiene mis obras en venta desde mi estudio en Santa Ponsa, Mallorca."]
+        ]  
+    ]
+  ))
 
 ;; Paintings
 
@@ -65,13 +73,8 @@
 
 (defn about-panel []
   [:div {:class "about-container"}
-   [:div {:style {:float "left"}}
-     [:img {:src "img/ConchaGalan.jpg"}]]
    [:div {:style {:float "center"}}
-     [:h1 "Welcome to my online gallery!"]
-     [:p "Hi! I'm a part-time artist and this site contains all my works available for sale from my studio in Santa Ponsa, Mallorca."]
-     [:p "If you are interested in any of the works or just have a question please don't hesitate to get in touch. I hope you enjoy the tour!"]
-     [:h2 "Contact: info@galacart-gallery.eu"]
+     [:img {:class "about-image" :src "img/about.jpg"}]
     ]
    ])
 
@@ -81,7 +84,7 @@
 (defn- panels [panel-name]
   [:div
    [:div {:class "header-banner"}
-    [:h1 {:class "header-banner-text"} [:a {:href "#/" :class "header-banner-text"} "Galacart Gallery"]]
+    [:h1 {:class "header-banner-text"} [:a {:href "#/home" :class "header-banner-text"} "Galacart Gallery"]]
     [:p {:class "header-banner-subtext"} "Mallorca, Santa Ponsa"]]
    [:div {:class "menu-and-products-container"}
     [:ul

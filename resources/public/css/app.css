@@ -3,6 +3,7 @@
   margin: 0px;
   padding: 15px;
   background-image: url("../img/header.jpg");
+  background-repeat: round;
 }
 .header-banner-text {
   margin: 0px;
@@ -52,9 +53,19 @@
 }
 
 /* Home container */
+.home-container {
+  /* background-image: url("../img/background.jpg"); */
+  /* background-color: #c4d2d3; */
+  background-color: #bec3c7;
+  background-repeat: round;
+  overflow: hidden;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
 .home-image {
-  width: 97vw;
-  height: 97vh;
+  max-width: 50vw;
+  max-height: 39vw;
+  width: auto;
+  height: auto;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -135,11 +146,16 @@
 
 /* About container */
 .about-container {
-  width: 97vw;
-  height: 97vh;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-image: url("../img/P9_Acrilico_Lienzo.jpg");
+  background-image: url("../img/background.jpg");
+  background-repeat: round;
+}
+.about-image {
+  max-width: 50vw;
+  max-height: 39vw;
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: block;
 }
 
 /* Product image modal, hidden by default */

@@ -24,6 +24,9 @@
   (defroute "/" []
     (re-frame/dispatch [::events/set-active-panel :home-panel]))
 
+  (defroute "/home" []
+    (re-frame/dispatch [::events/set-active-panel :home-panel]))
+
   (defroute "/paintings" []
     (re-frame/dispatch [::events/set-active-panel :paintings-panel]))
 
