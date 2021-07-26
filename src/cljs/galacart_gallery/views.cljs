@@ -29,8 +29,13 @@
         ]  
       [:div {:style {:float "right" :max-width "40vw"}}
         [:h1 "Welcome! Bienvenidos!"]
-        [:p {:class "home-text"} "I'm a part-time artist and this site contains my works available for sale from my studio in Santa Ponsa, Mallorca, Spain."]
-        [:p {:class "home-text"} "Soy un artista a tiempo parcial y esta pagina contiene mis obras en venta desde mi estudio en Santa Ponsa, Mallorca."]
+        [:p {:class "home-text"} 
+           "Hi I'm Maria, thanks for visiting my website where you can find some of my works - paintings and sculptures."[:br][:br]
+           "My studio is located in Santa Ponsa, Mallorca (Spain), and I can be reached via e-mail."]
+        [:hr]
+        [:p {:class "home-text"} 
+           "Hola soy María, gracias por visitar esta página donde puedes ver alguna de mis obras, pinturas y esculturas."[:br][:br]
+           "Mi taller lo tengo en Santa Ponsa, Mallorca, y si quieres contactar lo puedes hacer en mi enlace."]
         ]  
     ]
   ))
